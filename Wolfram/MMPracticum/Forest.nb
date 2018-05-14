@@ -1,0 +1,92 @@
+a = 1.0;
+k = 0.0667; 
+\[Delta] = 2.0;
+initial = 32;
+space = 64.0;
+w = 10.0;
+rBasal = Table[Random[Real, {2.0^-5, 2.0^-3}], {i, initial}];
+pos = Table[{Random[Real, space], Random[Real, space]}, {i, initial}];
+(*
+types = 5;
+w = Table[Random[], {i, types}];
+type = Table[Random[Integer, {1, types}], {i, initial}];
+*)
+rFON = rBasal;
+UpdateFON[] := Module[{r, d, b, i},
+   d = 32.0; (* b in [12, 133] *)
+   b = 1.5; (* b in [1.2, 2.3] *)
+   rFON = Table[d * rBasal[[i]]^b, {i, Length[rBasal]}];
+   ];
+CircleArea[r_] := Pi * r^2;
+\[Gamma][i_, j_] := Module[{a, r, R, d},
+   r = rFON[[i]];
+   R = rFON[[j]];
+   d = Norm[pos[[i]] - pos[[j]]];
+   If[ d > r + R,
+    a = 0.0,
+    If[d <= Abs[r - R],
+      a = CircleArea[Min[{r, R}]],
+      a = r^2 * ArcCos[(d^2 + r^2 - R^2)/(2.0 * d * r)];
+      a += R^2 * ArcCos[(d^2 + R^2 - r^2)/(2.0 * d * R)];
+      a -= Sqrt[(-d + r + R) * (d + r - R) * (d - r + R) * (d + r + 
+          R)]/2.0;
+      ];
+    ];
+   a
+   ];
+\[Sigma][i_, j_] := \[Gamma][i, j]/2.0;
+\[Alpha][i_, j_] := If[rFON[[i]] >= rFON[[j]], \[Gamma][i, j], 0];
+\[Phi][i_, j_] := Module[{a, p},
+   p = 0.5; (* p in [0.0, 1.0] *)
+   a = p * \[Alpha][i, j] + (1 - p) * \[Sigma][i, j]
+   ];
+f[vt_, a_] := If[ a == 0, 1, vt^a];
+If [\[Delta] != 1,
+  dv[i_] := Module[{j}, k/(1 - \[Delta])*f[rBasal[[i]], a ]*((1/w* \!\(
+\*SubsuperscriptBox[\(\[Sum]\), \(j\  = \ 1\), \(Length[
+            rBasal]\)]\(rBasal[\([\)\(j\)\(]\)]\ *\ \[Phi][i, \ 
+            j]\)\))^(\[Delta] - 1) - 1.0)],
+  dv[i_] := Module[{j}, k*f[rBasal[[i]], a ]*(Log[w] - Log[\!\(
+\*SubsuperscriptBox[\(\[Sum]\), \(j\  = \ 1\), \(Length[
+           rBasal]\)]\(rBasal[\([\)\(j\)\(]\)]\ *\ \[Phi][i, \ 
+           j]\)\)])]
+  ];
+\[Tau] = 2.0^-4.0;
+T = 5.0;
+RungeKutta[f_, tn_, yn_, order_] := Module[{y, a, b, c, k, i, j, v},
+   Switch[order,
+    3,
+    	a = {{0.0, 0.0, 0.0}, {0.5, 0.0, 0.0}, {-1, 2, 0}};
+    	b = {1.0/6.0, 2.0/3.0, 1.0/6.0};
+    	c = {0, 0.5, 1},
+    4,
+    	a = {{0.0, 0.0, 0.0, 0.0}, {0.5, 0.0, 0.0, 0.0}, {0.0, 0.5, 0.0, 
+       0.0}, {0.0, 0.0, 1.0, 0.0}};
+    	b = {1.0/6.0, 1.0/3.0, 1.0/3.0, 1.0/6.0};
+    	c = {0.0, 0.5, 0.5, 1.0};
+    ];
+   k = Table[yn, Length[c]];
+   y = yn;
+   For [i = 1, i <= Length[b], i += 1,
+    For[j = 1, j <= i, j += 1,
+     k[[i]] += \[Tau] * a[[i, j]] * k[[j]];
+     ];
+    rBasal = k[[i, All]];
+    UpdateFON[];
+    k[[i]] = Table[dv[v], {v, Length[rBasal]}];
+    y += \[Tau] * b[[i]] * k[[i]];
+    ];
+   y
+   ];
+frames = {rBasal};
+For[l = 1, l < Ceiling[T/\[Tau] + 1], ++l,
+  Print[l];
+  frames = Append[frames, RungeKutta[dv, i, frames[[l, All]], 4]];
+  ];
+Manipulate[
+ rBasal = frames[[frame, All]]; UpdateFON[];
+ Graphics[
+  Table[{Red, Circle[pos[[i]], rFON[[i]]], Black, 
+    Circle[pos[[i]], rBasal[[i]]]}, {i, 1, Length[pos]}]], {frame, 1, 
+  Length[frames], 1}
+ ]
