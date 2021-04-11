@@ -18,4 +18,5 @@ Major Features:
 Technologies:
 -----
  - Android Lollipop 5.0
+ - Android Studio IDE
  - com.sothree.slidinguppanel:library:3.0.0 (https://github.com/umano/AndroidSlidingUpPanel)
