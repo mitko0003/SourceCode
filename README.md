@@ -1,2 +1,2 @@
 # Source Code
-A collection of all the code I write. Feel free to use/ comment/ pull!
+A collection of small projects, code snippets and algorithms. Feel free to use/ comment/ pull!
