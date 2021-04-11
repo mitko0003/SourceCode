@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="350dp"
+android:layout_height="wrap_content"
+android:paddingRight="10dp"
+android:paddingLeft="10dp"
+tools:context="com.unisofia.fmi.musicplayer.activity.AddToPlaylistActivity"
+android:background="@android:color/white">
+
+    <TextView android:text="@string/add_to_playlist"
+        android:id="@+id/text_view_add_to_playlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:textSize="25sp"
+        android:textColor="@android:color/black"/>
+
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="com.unisofia.fmi.musicplayer.fragment.PlaylistFragment"
+        android:id="@+id/list_view_playlists"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_playlist_cancel"
+        android:layout_below="@id/text_view_add_to_playlist"
+        android:scrollbars="none"
+        android:background="@android:color/transparent"
+        android:fastScrollEnabled="true"
+        android:choiceMode="singleChoice"
+        android:divider="@color/primary_light"
+        android:dividerHeight="1dp">
+        <requestFocus />
+    </ListView>
+
+    <Button
+        style="?android:borderlessButtonStyle"
+        android:id="@+id/button_playlist_cancel"
+        android:textColor="?attr/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

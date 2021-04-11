@@ -1,0 +1,17 @@
+Average serial time is: 855.9
+Average parallel with 1 pool size is: 827.0
+a(1) = T / t(1) = 1.0349
+Average parallel with 2 pool size is: 559.0
+a(2) = T / t(2) = 1.5311
+Average parallel with 3 pool size is: 418.2
+a(3) = T / t(3) = 2.0466
+Average parallel with 4 pool size is: 387.3
+a(4) = T / t(4) = 2.2099
+Average parallel with 5 pool size is: 374.8
+a(5) = T / t(5) = 2.2836
+Average parallel with 6 pool size is: 377.7
+a(6) = T / t(6) = 2.2661
+Average parallel with 7 pool size is: 372.0
+a(7) = T / t(7) = 2.3008
+Average parallel with 8 pool size is: 377.2
+a(8) = T / t(8) = 2.2691

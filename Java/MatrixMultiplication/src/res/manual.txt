@@ -1,0 +1,14 @@
+Usage: MatrixMultiplication [-options] args(3)
+           (last arg is used for destination file)
+
+where options include:
+    -g            use general definition of the matrix product
+    -p [<int>]    use multi thread multiplication with <int> number of threads
+                  by default uses current machine core count 0 < <int> <= 2*cores
+    -b [<int>]    benchmark the multiplication with <int> passes using current
+                  multiplication algorithm settings
+                  by default makes one pass
+    -w [<int>]    (Watch) print/log info about the multiplication tasks
+                  <int> indicates the report frequency <int> > 0
+    -h            get help
+See https://github.com/mitko0003/projects/MatrixMultiplication for more details.

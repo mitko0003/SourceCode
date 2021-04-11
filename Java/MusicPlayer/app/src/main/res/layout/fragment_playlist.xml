@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.unisofia.fmi.musicplayer.fragment.PlaylistFragment"
+    android:id="@+id/list_view_playlist"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fastScrollEnabled="true"
+    android:scrollbars="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:fadeScrollbars="false"
+    android:scrollbarStyle="insideInset"
+    android:choiceMode="singleChoice"
+    android:scrollbarSize="14sp"
+    android:divider="@color/primary_light"
+    android:dividerHeight="1dp"
+    android:smoothScrollbar="false" />

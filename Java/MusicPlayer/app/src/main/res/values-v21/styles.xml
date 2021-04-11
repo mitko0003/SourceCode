@@ -1,0 +1,13 @@
+<resources>
+
+    <style name="ControlButton">
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="FAB">
+        <item name="android:background">@drawable/accent_color_btn_circle</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+</resources>

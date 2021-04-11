@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="350dp"
+    android:orientation="vertical"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    tools:context="com.unisofia.fmi.musicplayer.activity.CreatePlaylistActivity"
+    android:background="@android:color/white">
+
+    <TextView android:text="@string/new_playlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:textSize="25sp"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapSentences"
+        android:id="@+id/edit_text_playlist_name"
+        android:singleLine="true"
+        android:textColorHint="@color/highlight"
+        android:textColor="@android:color/black"
+        android:hint="@string/playlist_name">
+        <requestFocus />
+    </EditText>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:paddingEnd="10dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:background="@android:color/transparent" >
+
+
+        <Button
+            style="?android:borderlessButtonStyle"
+            android:textColor="?attr/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:id="@+id/button_cancel" />
+
+        <Button
+            style="?android:borderlessButtonStyle"
+            android:textColor="@drawable/button_text_color"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/create"
+            android:id="@+id/button_create"/>
+
+    </LinearLayout>
+
+</LinearLayout>

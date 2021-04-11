@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="song_card_bg">#FFFFFFFF</color>
+    <color name="highlight">#85000000</color>
+    <color name="primary">#FF3f51b5</color>
+    <color name="primary_dark">#FF303F9F</color>
+    <color name="primary_light">#FFC5CDE9</color>
+    <color name="accent">#FFFF4081</color>
+    <color name="control_normal">#FFFF80AB</color>
+    <color name="control_activated">#FFFF4081</color>
+    <color name="control_highlight">#FFF50057</color>
+    <color name="switch_thumb_normal">#FF00FF00</color>
+    <color name="playback_control_not_active">#FF000000</color>
+
+    <color name="blue_light">#FFBBDEFB</color>
+    <color name="purple_light">#FFD1C4E9</color>
+    <color name="red_light">#FFFFCDD2</color>
+    <color name="cyan_light">#FFB2EBF2</color>
+    <color name="teal_light">#FFB2DFDB</color>
+    <color name="lime_light">#FFF0F4C3</color>
+    <color name="green_light">#FFDCEDC8</color>
+
+</resources>

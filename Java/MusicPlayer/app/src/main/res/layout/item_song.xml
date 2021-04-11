@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="false"
+    android:descendantFocusability="blocksDescendants"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:contentDescription="@string/song_thumbnail"
+        android:src="@drawable/ic_launcher"
+        android:layout_width="@dimen/thumbnails"
+        android:layout_height="@dimen/thumbnails"
+        android:id="@+id/image_view_song_thumbnail"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/image_view_song_thumbnail"
+        android:layout_toEndOf="@+id/image_view_song_thumbnail"
+        android:layout_toLeftOf="@+id/image_button_song_settings"
+        android:layout_toStartOf="@+id/image_button_song_settings"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="@string/not_available"
+            android:singleLine="true"
+            android:textColor="@color/highlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_song_title" />
+
+        <TextView
+            android:text="@string/not_available"
+            android:textColor="@color/highlight"
+            android:singleLine="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/text_view_song_artist" />
+    </LinearLayout>
+
+    <ImageButton
+        style="@style/ControlButton"
+        android:layout_width="@dimen/thumbnails"
+        android:layout_height="@dimen/thumbnails"
+        android:id="@+id/image_button_song_settings"
+        android:src="@drawable/abc_ic_menu_moreoverflow_mtrl_alpha"
+        android:tint="?attr/colorAccent"
+        android:contentDescription="@string/settings_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+</RelativeLayout>

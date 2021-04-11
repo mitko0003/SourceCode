@@ -1,0 +1,61 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <item name="windowActionBar">false</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorControlNormal">@color/control_normal</item>
+        <item name="colorControlActivated">@color/control_activated</item>
+        <item name="colorControlHighlight">@color/control_highlight</item>
+        <item name="colorSwitchThumbNormal">@color/switch_thumb_normal</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Dialog">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorControlNormal">@color/control_normal</item>
+        <item name="colorControlActivated">@color/control_activated</item>
+        <item name="colorControlHighlight">@color/control_highlight</item>
+        <item name="colorSwitchThumbNormal">@color/switch_thumb_normal</item>
+    </style>
+
+    <style name="DrawerStyle" parent="Theme.AppCompat.NoActionBar">
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="TabHeader">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="PlaylistTitle">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <!--<style name="LightPopupMenu" parent="@style/ThemeOverlay.AppCompat.Light">-->
+        <!--<item name="android:background">@android:color/white</item>-->
+        <!--<item name="android:textColor">@android:color/black</item>-->
+    <!--</style>-->
+
+    <style name="ControlButton">
+        <item name="android:background">@drawable/circle</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="FAB">
+        <item name="android:background">@drawable/accent_color_circle</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+</resources>
